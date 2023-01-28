@@ -17,7 +17,7 @@ namespace ZangDesk.API.Controllers
         }
 
         [HttpGet] // Action method that responds to an HTTP request
-        public async Task<IEnumerable<Issue>> Get() 
+        public async Task<IEnumerable<Issue>> Get()
             => await _context.Issues.ToListAsync();
 
         //public JsonResult GetIssues()
@@ -29,5 +29,14 @@ namespace ZangDesk.API.Controllers
         //            new { id = 2, Name = "Issue 2" }
         //        });
         //}
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(Issue), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var issue = await _context.Issues.FindAsync(id);
+            return issue == null ? NotFound() : Ok(issue);
+        }
     }
 }
