@@ -16,7 +16,7 @@ namespace ZangDesk.API.Model
         public DateTime? Completed { get; set; }
     }
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))] // Shows constant names in Swagger
     public enum Priority
     {
         Low, Medium, High

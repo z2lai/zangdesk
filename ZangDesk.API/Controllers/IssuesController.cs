@@ -38,5 +38,16 @@ namespace ZangDesk.API.Controllers
             var issue = await _context.Issues.FindAsync(id);
             return issue == null ? NotFound() : Ok(issue);
         }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+
+        public async Task<IActionResult> Create(Issue issue)
+        {
+            await _context.Issues.AddAsync(issue);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetById), new { id = issue.Id }, issue); // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core#createdataction-explained
+        }
     }
 }
