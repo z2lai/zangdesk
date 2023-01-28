@@ -2,7 +2,7 @@
 
 namespace ZangDesk.API.Model
 {
-    public class Issues
+    public class Issue
     {
         public int Id { get; set; }
         [Required]
