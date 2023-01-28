@@ -41,13 +41,25 @@ namespace ZangDesk.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-
         public async Task<IActionResult> Create(Issue issue)
         {
             await _context.Issues.AddAsync(issue);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetById), new { id = issue.Id }, issue); // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core#createdataction-explained
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update(int id, Issue issue)
+        {
+            if (id != issue.Id) return BadRequest();
+
+            _context.Entry(issue).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }
