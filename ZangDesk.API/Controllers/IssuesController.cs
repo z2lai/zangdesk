@@ -20,16 +20,6 @@ namespace ZangDesk.API.Controllers
         public async Task<IEnumerable<Issue>> Get()
             => await _context.Issues.ToListAsync();
 
-        //public JsonResult GetIssues()
-        //{
-        //    return new JsonResult(
-        //        new List<object>
-        //        {
-        //            new { id = 1, Name = "Issue 1" },
-        //            new { id = 2, Name = "Issue 2" }
-        //        });
-        //}
-
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(Issue), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
