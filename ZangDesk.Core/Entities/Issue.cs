@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace ZangDesk.API.Model
+namespace ZangDesk.Core
 {
     public class Issue
     {

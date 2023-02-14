@@ -20,4 +20,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ZangDesk.Core\ZangDesk.Core.csproj" />
+  </ItemGroup>
+
 </Project>

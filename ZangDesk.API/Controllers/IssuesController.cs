@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZangDesk.API.Data;
-using ZangDesk.API.Model;
+using ZangDesk.Core;
 
 namespace ZangDesk.API.Controllers
 {

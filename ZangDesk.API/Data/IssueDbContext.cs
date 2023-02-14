@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ZangDesk.API.Model;
+using ZangDesk.Core;
 
 namespace ZangDesk.API.Data
 {
@@ -11,5 +11,6 @@ namespace ZangDesk.API.Data
         }
 
         public DbSet<Issue> Issues { get; set; }
+        
     }
 }
