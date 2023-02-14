@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ZangDesk.Core
+namespace ZangDesk.Core.Entities
 {
     public class Article
     {

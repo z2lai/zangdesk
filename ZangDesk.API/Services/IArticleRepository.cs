@@ -1,10 +1,11 @@
-﻿using ZangDesk.Core;
+﻿using ZangDesk.Core.Dtos;
 
 namespace ZangDesk.API.Services
 {
     public interface IArticleRepository
     {
-        Article GetArticleById(int Id);
-        IEnumerable<Article> GetArticles();
+        ArticleDto GetArticleById(int Id);
+        IEnumerable<ArticleDto> GetArticles();
+
     }
 }

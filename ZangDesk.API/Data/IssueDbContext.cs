@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ZangDesk.Core;
+using ZangDesk.Core.Entities;
 
 namespace ZangDesk.API.Data
 {
